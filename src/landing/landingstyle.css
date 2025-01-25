@@ -1,0 +1,206 @@
+.navbar {
+    display: flex;
+    justify-content: center;
+    /* จัด navbar ให้อยู่ตรงกลาง */
+    align-items: center;
+    padding: 1.5rem 1rem;
+    background-color: #ffffff;
+    color: white;
+}
+
+.navbar-center {
+    display: flex;
+    justify-content: space-between;
+    /* จัดให้มีช่องว่างระหว่างลิงก์ซ้ายขวา */
+    align-items: center;
+    width: 100%;
+    max-width: 1000px;
+    /* ขนาดสูงสุดของ navbar */
+}
+
+.navbar-logo {
+    margin-left: 13px;
+    /* ช่องว่างด้านซ้ายของโลโก้ */
+    margin-right: 13px;
+    /* ช่องว่างด้านขวาของโลโก้ */
+}
+
+.navbar-links {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 16px;
+    /* ช่องว่างระหว่างลิงก์ */
+}
+
+.navbar-links li {
+    margin: 0;
+}
+
+.navbar-links a {
+    font-size: 20px;
+    color: #0D2A3D;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.navbar-links a:hover {
+    color: #1891AC;
+}
+
+.navbar-logo img {
+    height: 40px;
+    /* ขนาดของโลโก้ */
+    width: auto;
+    margin-bottom: 8px;
+}
+
+
+.footernav {
+    text-align: right;
+    margin: 10px;
+}
+
+.footerbg {
+    position: relative;  /* ให้ footer สามารถใช้ pseudo-element ได้ */
+    background-color: #0D2A3D;  /* สีพื้นหลังที่คลุมทับ */
+    background-size: cover;  /* ปรับขนาดภาพให้เต็มพื้นที่ */
+    background-position: center center;  /* จัดตำแหน่งภาพให้ตรงกลาง */
+    background-repeat: no-repeat;  /* ป้องกันไม่ให้ภาพซ้ำ */
+    background-attachment: fixed;  /* ทำให้ภาพไม่เลื่อนตามเมื่อเลื่อนหน้าเว็บ */
+    opacity: 95%;
+}
+
+/* ใช้ pseudo-element เพื่อสร้างเลเยอร์ที่มีภาพพื้นหลัง */
+.footerbg::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url(../../public/asset/footer-bg.jpg);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;  /* ทำให้ภาพไม่เลื่อนตามเมื่อเลื่อนหน้าเว็บ */
+    opacity: 5%;  /* ปรับความโปร่งใสของภาพ */
+    z-index: -1;  /* ทำให้ภาพอยู่ข้างหลังเนื้อหาของ footer */
+}
+
+
+
+.footertextcolor {
+    color: #ffffff;
+}
+
+/*family fonts*/
+.kanit-thin {
+    font-family: "Kanit", system-ui;
+    font-weight: 100;
+    font-style: normal;
+}
+
+.kanit-extralight {
+    font-family: "Kanit", system-ui;
+    font-weight: 200;
+    font-style: normal;
+}
+
+.kanit-light {
+    font-family: "Kanit", system-ui;
+    font-weight: 300;
+    font-style: normal;
+}
+
+.kanit-regular {
+    font-family: "Kanit", system-ui;
+    font-weight: 400;
+    font-style: normal;
+
+}
+
+.kanit-medium {
+    font-family: "Kanit", system-ui;
+    font-weight: 500;
+    font-style: normal;
+}
+
+.kanit-semibold {
+    font-family: "Kanit", system-ui;
+    font-weight: 600;
+    font-style: normal;
+}
+
+.kanit-bold {
+    font-family: "Kanit", system-ui;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.kanit-extrabold {
+    font-family: "Kanit", system-ui;
+    font-weight: 800;
+    font-style: normal;
+}
+
+.kanit-black {
+    font-family: "Kanit", system-ui;
+    font-weight: 900;
+    font-style: normal;
+}
+
+.kanit-thin-italic {
+    font-family: "Kanit", system-ui;
+    font-weight: 100;
+    font-style: italic;
+}
+
+.kanit-extralight-italic {
+    font-family: "Kanit", system-ui;
+    font-weight: 200;
+    font-style: italic;
+}
+
+.kanit-light-italic {
+    font-family: "Kanit", system-ui;
+    font-weight: 300;
+    font-style: italic;
+}
+
+.kanit-regular-italic {
+    font-family: "Kanit", system-ui;
+    font-weight: 400;
+    font-style: italic;
+}
+
+.kanit-medium-italic {
+    font-family: "Kanit", system-ui;
+    font-weight: 500;
+    font-style: italic;
+}
+
+.kanit-semibold-italic {
+    font-family: "Kanit", system-ui;
+    font-weight: 600;
+    font-style: italic;
+}
+
+.kanit-bold-italic {
+    font-family: "Kanit", system-ui;
+    font-weight: 700;
+    font-style: italic;
+}
+
+.kanit-extrabold-italic {
+    font-family: "Kanit", system-ui;
+    font-weight: 800;
+    font-style: italic;
+}
+
+.kanit-black-italic {
+    font-family: "Kanit", system-ui;
+    font-weight: 900;
+    font-style: italic;
+}
