@@ -51,11 +51,15 @@ function IncomePage() {
     };
 
     const handleSalaryChange = (e) => {
-        const formattedValue = formatNumberWithComma(e.target.value);  // เพิ่มคอมม่าเมื่อพิมพ์
+        // แปลงค่าที่รับเข้ามาให้มีเครื่องหมายคอมม่า
+        const formattedValue = formatNumberWithComma(e.target.value);
         setSalary401(formattedValue);
-        setAnnualIncome(parseFloat(formattedValue.replace(/,/g, '')) * 12);  // คำนวณรายได้ประจำปี
-        // บันทึกค่าใน localStorage
+        // คำนวณรายได้ต่อปีโดยคูณด้วย 12 เดือน
+        const annualValue = parseFloat(formattedValue.replace(/,/g, '')) * 12;
+        setAnnualIncome(annualValue);
+        // บันทึกค่าลงใน localStorage ทั้งเงินเดือนและรายได้ต่อปี
         localStorage.setItem('salary401', formattedValue);
+        localStorage.setItem('annualIncome', annualValue);
     };
 
     const handleBonusChange = (e) => {
