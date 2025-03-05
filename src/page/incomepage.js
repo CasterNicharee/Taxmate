@@ -1,79 +1,64 @@
 import React, { useState, useEffect } from 'react';
+import Main from "../component/main";
 import './persontax.css';
 
+
 function IncomePage() {
-    const [salary401, setSalary401] = useState('');
-    const [bonus401, setBonus401] = useState('');
-    const [pension401, setPension401] = useState('');
-    const [result, setResult] = useState(null);
+    const [formData, setFormData] = useState({
+        salary401: '', bonus401: '', pension401: '', salary402: '',
+        salary403: '', salary404: '', salary405: '', salary406: '',
+        salary407: '', salary408: ''
+    });
+    const [result, setResult] = useState(0);
     const [annualIncome, setAnnualIncome] = useState(0);
     const [showPopup, setShowPopup] = useState(false);
 
-    // โหลดข้อมูลจาก localStorage เมื่อเริ่มต้น
+    // Load data from localStorage on component mount
     useEffect(() => {
         const savedSalary = localStorage.getItem('salary401');
         const savedBonus = localStorage.getItem('bonus401');
         const savedPension = localStorage.getItem('pension401');
-        const savedAnnualIncome = localStorage.getItem('annualIncome')
+        const savedAnnualIncome = localStorage.getItem('annualIncome');
 
-        if (savedSalary) setSalary401(savedSalary);
-        if (savedBonus) setBonus401(savedBonus);
-        if (savedPension) setPension401(savedPension);
-        if (savedAnnualIncome) setAnnualIncome(savedAnnualIncome);
+        if (savedSalary) setFormData(prev => ({ ...prev, salary401: savedSalary }));
+        if (savedBonus) setFormData(prev => ({ ...prev, bonus401: savedBonus }));
+        if (savedPension) setFormData(prev => ({ ...prev, pension401: savedPension }));
+        if (savedAnnualIncome) setAnnualIncome(Number(savedAnnualIncome) || 0);
     }, []);
 
-    // ฟังก์ชันคำนวณรายได้สุทธิ
-    const calculate = () => {
-        const num1 = parseFloat(salary401.replace(/,/g, '')) || 0;
-        const num2 = parseFloat(bonus401.replace(/,/g, '')) || 0;
-        const num3 = parseFloat(pension401.replace(/,/g, '')) || 0;
+    // Calculate net income automatically whenever formData changes
+    useEffect(() => {
+        const salary401 = parseFloat(formData.salary401.replace(/,/g, '')) || 0;
+        const bonus401 = parseFloat(formData.bonus401.replace(/,/g, '')) || 0;
+        const pension401 = parseFloat(formData.pension401.replace(/,/g, '')) || 0;
 
-        const totalIncome = (num1 * 12) + num2 + num3;
+        const totalIncome401 = (salary401 * 12) + bonus401 + pension401;
+        setResult(totalIncome401 > 0 ? totalIncome401 : 0);
+    }, [formData.salary401, formData.bonus401, formData.pension401]);
 
-        if (totalIncome > 0) {
-            setResult(totalIncome);
-        } else {
-            setResult('กรุณาใส่ข้อมูลรายได้ที่ถูกต้อง');
-        }
-    };
-
-    // ฟังก์ชันสำหรับเพิ่มเครื่องหมายคอมม่าในตัวเลข
+    // Format number with commas
     const formatNumberWithComma = (value) => {
-        // เอาเครื่องหมายอื่นออก เช่น เครื่องหมายคอมม่าแล้วแปลงเป็นตัวเลข
         let cleanedValue = value.replace(/,/g, '');
-
-        // ถ้าค่าคือหมายเลข ให้ใส่เครื่องหมายคอมม่า
         if (!isNaN(cleanedValue) && cleanedValue !== '') {
             return parseInt(cleanedValue).toLocaleString();
         }
-
-        return value;  // ถ้าไม่ใช่ตัวเลขก็คืนค่ากลับไปตามเดิม
+        return value;
     };
 
-    const handleSalaryChange = (e) => {
-        // แปลงค่าที่รับเข้ามาให้มีเครื่องหมายคอมม่า
-        const formattedValue = formatNumberWithComma(e.target.value);
-        setSalary401(formattedValue);
-        // คำนวณรายได้ต่อปีโดยคูณด้วย 12 เดือน
-        const annualValue = parseFloat(formattedValue.replace(/,/g, '')) * 12;
-        setAnnualIncome(annualValue);
-        // บันทึกค่าลงใน localStorage ทั้งเงินเดือนและรายได้ต่อปี
-        localStorage.setItem('salary401', formattedValue);
-        localStorage.setItem('annualIncome', annualValue);
-    };
+    // Handle input changes dynamically
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        const formattedValue = formatNumberWithComma(value);
 
-    const handleBonusChange = (e) => {
-        const formattedValue = formatNumberWithComma(e.target.value);  // เพิ่มคอมม่าเมื่อพิมพ์
-        setBonus401(formattedValue);
-        // บันทึกค่าใน localStorage
-        localStorage.setItem('bonus401', formattedValue);
-    };
+        setFormData(prev => ({ ...prev, [name]: formattedValue }));
 
-    const handlepensionChange = (e) => {
-        const formattedValue = formatNumberWithComma(e.target.value);  // เพิ่มคอมม่าเมื่อพิมพ์
-        setPension401(formattedValue);
-        // บันทึกค่าใน localStorage
-        localStorage.setItem('pension401', formattedValue);
+        if (name === 'salary401') {
+            const annualValue = parseFloat(formattedValue.replace(/,/g, '')) * 12 || 0;
+            setAnnualIncome(annualValue);
+            localStorage.setItem('annualIncome', annualValue);
+        }
+
+        localStorage.setItem(name, formattedValue);
     };
 
     const handleIconClick = () => {
@@ -123,17 +108,17 @@ function IncomePage() {
                             <input
                                 className="box-form"
                                 type="text"
-                                value={salary401}
-                                onChange={handleSalaryChange}  // ใช้ handle change เพื่อ format
+                                name="salary401"
+                                value={formData.salary401}
+                                onChange={handleChange}
                             />
                             <span className="kanit-regular text-form-span-content">บาท/เดือน</span>
                             <div className="annual-income-box" style={{ display: "flex", alignItems: "center", gap: "8px", marginLeft: "16px" }}>
-                                <div className="form-control kanit-regular text-form-span-content disabled-input">
-                                    {annualIncome.toLocaleString()}
-                                </div>
+                                <span className="kanit-regular text-form-span-content">
+                                    {annualIncome ? annualIncome.toLocaleString() : '0'}
+                                </span>
                                 <span className="kanit-regular text-form-span-content">บาท/เดือน</span>
                             </div>
-
                         </div>
                     </div>
                     <br />
@@ -141,12 +126,13 @@ function IncomePage() {
                         <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
                             <label className="kanit-regular text-form-leble-content">โอที โบนัส</label>
                         </div>
-                        <div style={{ display: "flex", alignItems: "center", gap: "8px", paddingRight: "50px" }}>
+                        <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
                             <input
                                 className="box-form"
                                 type="text"
-                                value={bonus401}
-                                onChange={handleBonusChange}  // ใช้ handle change เพื่อ format
+                                name="bonus401"
+                                value={formData.bonus401}
+                                onChange={handleChange}
                             />
                             <span className="kanit-regular text-form-span-content">บาท</span>
                         </div>
@@ -156,31 +142,42 @@ function IncomePage() {
                         <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
                             <label className="kanit-regular text-form-leble-content">บำเหน็จ</label>
                         </div>
-                        <div style={{ display: "flex", alignItems: "center", gap: "8px", paddingRight: "50px" }}>
+                        <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
                             <input
                                 className="box-form"
                                 type="text"
-                                value={pension401}
-                                onChange={handlepensionChange}  // ใช้ handle change เพื่อ format
+                                name="pension401"
+                                value={formData.pension401}
+                                onChange={handleChange}
                             />
                             <span className="kanit-regular text-form-span-content">บาท</span>
                         </div>
                     </div>
-                </form>
 
-                <div className="text-center mt-4">
-                    <button className="calculate-button" onClick={calculate}>คำนวณ</button>
-                </div>
+                    <br /> <div className="dashed-line"></div><br />
 
-                {result !== null && (
-                    <div className="result-container">
-                        {typeof result === 'number' ? (
-                            <h2 className="kanit-bold text-success">เงินได้สุทธิของท่าน: {result.toLocaleString()} บาท</h2>
-                        ) : (
-                            <h2 className="kanit-bold text-danger">{result}</h2>
-                        )}
+                    <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
+                        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+                            <label className="kanit-regular text-form-leble-content">เงินได้สุทธิของท่าน</label>
+
+                            <span className="kanit-regular text-form-span-content">
+                                {result ? result.toLocaleString() : '0'}   บาท
+                            </span>
+                        </div>
+                        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+                            <span className="kanit-regular  text-form-leble-content ">คุณมีเงินได้ประเภทอื่นๆ หรือไม่</span>
+                            <div style={{ display: "flex", gap: "8px" }}>
+                                <label className='kanit-regular text-form-span-content'>
+                                    <input type="radio" name="option2" value="มี" /> มี
+                                </label>
+                                <label className='kanit-regular text-form-span-content'>
+                                    <input type="radio" name="option2" value="ไม่มี" /> ไม่มี
+                                </label>
+                            </div>
+                        </div>
                     </div>
-                )}
+                    <br /> <div className="dashed-line"></div>
+                </form>
             </div>
         </div>
     );

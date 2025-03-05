@@ -19,12 +19,12 @@ function Footer() {
                             </a>
                         </li>
                         <li className="nav-item">
-                            <a href="#" className="nav-link px-2 kanit-light footertextcolor">
+                            <a href="abou" className="nav-link px-2 kanit-light footertextcolor">
                                 เกี่ยวกับเรา
                             </a>
                         </li>
                         <li className="nav-item">
-                            <a href="#" className="nav-link px-2 kanit-light footertextcolor">
+                            <a href="#" className="nav-link px-2 kanit-light footertextcolor disable">
                                 นิติบุคคล
                             </a>
                         </li>
@@ -34,7 +34,7 @@ function Footer() {
                             </a>
                         </li>
                         <li className="nav-item">
-                            <a href="#" className="nav-link px-2 kanit-light footertextcolor">
+                            <a href="/taxlaw" className="nav-link px-2 kanit-light footertextcolor">
                                 กฎหมาย
                             </a>
                         </li>
@@ -56,7 +56,7 @@ function Footer() {
                             <ul className="list-unstyled d-flex">
                                 {/* Line Icon */}
                                 <li className="ms-3">
-                                    <a href="https://line.me/ti/p/YSrP8bXILp" target="_blank" rel="noopener noreferrer">
+                                    <a href="https://line.me/ti/p/LSmlGV_ePv" target="_blank" rel="noopener noreferrer">
                                         <i className="fab fa-line" style={{ fontSize: "30px", color: "#00c300" }}></i>
                                     </a>
                                 </li>
@@ -64,7 +64,7 @@ function Footer() {
                                 {/* Facebook Icon */}
                                 <li className="ms-3">
                                     <a href="https://www.facebook.com/hatyaiaccouting" target="_blank" rel="noopener noreferrer">
-                                        <i className="fab fa-facebook" style={{ fontSize: "30px", color: "#3b5998" , alignItems:"center"}}></i>
+                                        <i className="fab fa-facebook" style={{ fontSize: "30px", color: "#3b5998", alignItems: "center" }}></i>
                                     </a>
                                 </li>
                             </ul>

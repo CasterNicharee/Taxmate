@@ -1,3 +1,10 @@
+.disable {
+    pointer-events: none;
+    color: gray;
+    /* เปลี่ยนสีให้ดูเหมือนปิดใช้งาน */
+    text-decoration: none;
+}
+
 .navbar {
     display: flex;
     justify-content: center;
@@ -63,12 +70,18 @@
 }
 
 .footerbg {
-    position: relative;  /* ให้ footer สามารถใช้ pseudo-element ได้ */
-    background-color: #0D2A3D;  /* สีพื้นหลังที่คลุมทับ */
-    background-size: cover;  /* ปรับขนาดภาพให้เต็มพื้นที่ */
-    background-position: center center;  /* จัดตำแหน่งภาพให้ตรงกลาง */
-    background-repeat: no-repeat;  /* ป้องกันไม่ให้ภาพซ้ำ */
-    background-attachment: fixed;  /* ทำให้ภาพไม่เลื่อนตามเมื่อเลื่อนหน้าเว็บ */
+    position: relative;
+    /* ให้ footer สามารถใช้ pseudo-element ได้ */
+    background-color: #0D2A3D;
+    /* สีพื้นหลังที่คลุมทับ */
+    background-size: cover;
+    /* ปรับขนาดภาพให้เต็มพื้นที่ */
+    background-position: center center;
+    /* จัดตำแหน่งภาพให้ตรงกลาง */
+    background-repeat: no-repeat;
+    /* ป้องกันไม่ให้ภาพซ้ำ */
+    background-attachment: fixed;
+    /* ทำให้ภาพไม่เลื่อนตามเมื่อเลื่อนหน้าเว็บ */
     opacity: 95%;
 }
 
@@ -84,9 +97,12 @@
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
-    background-attachment: fixed;  /* ทำให้ภาพไม่เลื่อนตามเมื่อเลื่อนหน้าเว็บ */
-    opacity: 5%;  /* ปรับความโปร่งใสของภาพ */
-    z-index: -1;  /* ทำให้ภาพอยู่ข้างหลังเนื้อหาของ footer */
+    background-attachment: fixed;
+    /* ทำให้ภาพไม่เลื่อนตามเมื่อเลื่อนหน้าเว็บ */
+    opacity: 5%;
+    /* ปรับความโปร่งใสของภาพ */
+    z-index: -1;
+    /* ทำให้ภาพอยู่ข้างหลังเนื้อหาของ footer */
 }
 
 

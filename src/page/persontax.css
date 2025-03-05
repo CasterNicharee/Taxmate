@@ -57,10 +57,9 @@
     font-size: 18px;
     color: #038aff;
     width: auto;
-    height: 50px;
+    height: 40px;
     padding: 8px;
     border: 1px solid gray;
-    border-radius: 10px;
     transition: background-color 0.3s ease;
     /* การเปลี่ยนแปลงสีเนียนขึ้น */
 }
@@ -171,6 +170,7 @@ input.box-form:focus {
 }
 
 .text-form-leble-content {
+
     margin-right: 20px;
     font-size: 18px;
     color: #004F70;
@@ -201,4 +201,86 @@ input.box-form:focus {
     align-items: center;
     justify-content: center;
     pointer-events: none;
+}
+
+.dashed-line {
+    border-top: 2px dashed #f0f0f0;
+    /* เส้นประขนาด 2px สีเทาอ่อนเกือบขาว */
+    width: 100%;
+    /* ความกว้างเต็มพื้นที่ */
+    margin: 10px 0;
+    /* ระยะห่างด้านบนและล่าง */
+}
+
+.check-box-span-content {}
+
+/*Drop down*/
+.dropdown-button {
+
+    background-color: white;
+    border: 1px solid #004F70;
+    padding: 8px 12px;
+    cursor: pointer;
+    height: 40px;
+    width: 70%;
+   
+}
+
+.dropdown-list {
+    position: absolute;
+    width: 300px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    background: white;
+    box-shadow: 0px 4px 6px #98cfff;
+
+}
+
+.dropdown-item {
+    padding: 8px 12px;
+    cursor: pointer;
+}
+
+.dropdown-item:hover {
+    background-color: #98cfff;
+}
+
+.box-form-for-input{
+    font-size: 18px;
+    color: #038aff;
+    width: 100px;
+    height: 40px;
+    padding: 8px;
+    border: 1px solid gray;
+    transition: background-color 0.3s ease;
+    /* การเปลี่ยนแปลงสีเนียนขึ้น */
+}
+
+/* เมื่อช่อง input ถูกคลิกหรือโฟกัส สีพื้นหลังจะเปลี่ยนเป็นฟ้า */
+input.box-form-for-input:focus {
+    background-color: #f9fdff;
+    /* ฟ้าอ่อน */
+    outline: none;
+    /* ปิดเส้นขอบที่เกิดจากการโฟกัส */
+    border-color: #66ccff;
+    /* เปลี่ยนสีขอบเมื่อโฟกัส */
+}
+
+
+.table-paytax-details {
+    width: 70%;
+    border-collapse: collapse;
+    text-align: center;
+    margin: auto;
+}
+.table-paytax-details td {
+    border: 2px solid #004F70;
+    padding: 8px;
+
+    text-align: center;
+}
+
+.table-paytax-details tr:nth-child(odd) {
+    background-color: #e4f7ff;
 }

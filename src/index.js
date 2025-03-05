@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './component/main';
 import TaxCalculator from './page/calpage';
 import reportWebVitals from './reportWebVitals';
 
@@ -15,6 +14,8 @@ import Personcaltax from './page/personcaltex';
 import Contact_us from './page/contact';
 import Questionanswer from './page/question';
 import Abouttax from './page/abouttax';
+import Lawtax from './page/lawtax';
+
 
 
 
@@ -48,6 +49,12 @@ const router = createBrowserRouter([
     path: '/abouttax',
     element: <Abouttax />, // หน้านี้จะเรนเดอร์ TaxCal
   },
+  {
+    path: '/taxlaw',
+    element: <Lawtax />, // หน้านี้จะเรนเดอร์ TaxCal
+  },
+
+ 
  
  
 

@@ -1,13 +1,218 @@
-.aboutpageformat{
-padding-left: 100px;
-padding-right: 100px;
+.aboutpageformat {
+    padding-left: 150px;
+    padding-right: 150px;
 }
 
-.about-head-text-content{
-    font-size: 25px;
-   
+.slider {
+    height: 300px;
+    width: 100%;
 }
-.about-text-content{
+
+.about-upper-head-text-content {
+    font-size: 25px;
+    color: #004F70;
+
+}
+
+.about-lower-head-text-content {
+    font-size: 20px;
+    color: #046792;
+
+}
+
+.about-text-content {
     font-size: 17px;
     text-align: justify;
+    color: #383838;
+}
+
+.abouttaximg {
+    height: 500px;
+    width: 500px;
+    display: block;
+    margin: auto;
+}
+
+.table-abouttax-details {
+    width: 90%;
+
+    border-collapse: collapse;
+    text-align: center;
+    margin: auto;
+}
+
+
+
+.table-abouttax-details td {
+    border: 2px solid #004F70;
+    padding: 8px;
+
+    text-align: center;
+}
+
+.table-abouttax-details tr:nth-child(odd) {
+    background-color: #e4f7ff;
+}
+
+
+.abouttax-slider-img {
+    width: 97% !important;
+
+}
+
+.abouttax-modal-img {
+    max-width: 100%;
+    /* ป้องกันภาพใหญ่เกิน Modal */
+    max-height: 100%;
+    /* ป้องกันภาพสูงเกินหน้าจอ */
+    border-radius: 10px;
+    /* ทำมุมโค้ง */
+    object-fit: contain;
+    /* ให้ภาพพอดีโดยไม่ถูกตัด */
+}
+
+.modal-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f8f9fa;
+    /* เปลี่ยนพื้นหลังเป็นสีเทาอ่อน */
+    padding: 20px;
+    /* เพิ่มช่องว่างรอบๆ */
+}
+
+.abouttaxbg {
+    width: 100%;
+    /* กว้างเต็มหน้าจอ */
+    height: 400px;
+    overflow: hidden;
+    /* ซ่อนส่วนที่เกินออกมา */
+    position: relative;
+    /* กำหนดให้เป็นจุดอ้างอิงของ pseudo-element */
+
+    background-color: #dbdcdc;
+    /* สีพื้นหลัง */
+    background-size: cover;
+    /* ปรับขนาดภาพให้เต็มพื้นที่ */
+    background-position: center center;
+    /* จัดตำแหน่งภาพให้ตรงกลาง */
+    background-repeat: no-repeat;
+    /* ไม่ให้ภาพซ้ำ */
+    background-attachment: fixed;
+    /* ทำให้ภาพไม่เลื่อนตามเมื่อเลื่อนหน้าเว็บ */
+
+    opacity: 0.95;
+    /* ต้องใช้ค่าทศนิยมและไม่มี `%` */
+}
+
+
+/* ใช้ pseudo-element เพื่อสร้างเลเยอร์ที่มีภาพพื้นหลัง */
+.abouttaxbg::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url(../../public/asset/slider-2.png);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    /* ทำให้ภาพไม่เลื่อนตามเมื่อเลื่อนหน้าเว็บ */
+    opacity: 5%;
+    /* ปรับความโปร่งใสของภาพ */
+    z-index: -1;
+    /* ทำให้ภาพอยู่ข้างหลังเนื้อหาของ footer */
+}
+
+.span-about-text-detail {
+    padding-left: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-size: 16px;
+    text-align: justify;
+    color: #383838;
+}
+
+.span-about-lower-head-text-detail {
+    font-size: 18px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    color: #046792;
+}
+
+.text-center-flex {
+    display: block;
+    flex-direction: column;
+    align-items: center;
+    /* จัดกึ่งกลางแนวตั้ง */
+    text-align: center;
+    /* จัดข้อความให้อยู่ตรงกลาง */
+}
+
+
+
+/*Card */
+
+
+.quote-container {
+    background-color: #dae8fc;
+    /* สีพื้นหลังฟ้าอ่อน */
+    padding: 35px;
+
+    width: 80%;
+    height: 300px;
+    position: relative;
+
+}
+
+
+.quote-text {
+    font-size: 40px;
+    font-weight: bold;
+    color: #2c3e50;
+    margin-bottom: 15px;
+    padding: 10px 80px 20px 10px;
+}
+
+.author {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.author-img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.author-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.author-name {
+    font-size: 14px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.author-role {
+    font-size: 12px;
+    color: gray;
+    margin: 0;
+}
+
+.quote-symbol {
+    font-size: 300px;
+    width: 80px;
+    height: 120px;
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.1);
+    position: absolute;
+    bottom:160px;
+    right: 100px;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
 }

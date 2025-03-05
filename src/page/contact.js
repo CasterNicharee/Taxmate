@@ -46,7 +46,7 @@ function Contact_us() {
                                                 <span className="fa fa-phone"></span>
                                             </div>
                                             <div className="text kanit-regular">
-                                                <p><span>Phone:</span> <a href="tel://0931592445">+66931592445</a></p>
+                                                <p><span>Phone:</span> <a href="tel://0931592445">+66910463561</a></p>
                                             </div>
                                         </div>
                                     </div>
@@ -56,7 +56,7 @@ function Contact_us() {
                                                 <span className="fa fa-paper-plane"></span>
                                             </div>
                                             <div className="text kanit-regular">
-                                                <p><span>Email:</span> <a href="mailto:info@yoursite.com">info@yoursite.com</a></p>
+                                                <p><span>Email:</span> <a href="mailto:hatyaiacc@gmail.com">hatyaiacc@gmail.com</a></p>
                                             </div>
                                         </div>
                                     </div>
@@ -66,7 +66,7 @@ function Contact_us() {
                                                 <span className="fa fa-globe"></span>
                                             </div>
                                             <div className="text kanit-regular">
-                                                <p><span>Website</span> <a href="/">Taxmate.com</a></p>
+                                                <p><span>Website</span> <a href="https://www.hatyaiaccounting.com/">Hatyaiaccounting</a></p>
                                             </div>
                                         </div>
                                     </div>

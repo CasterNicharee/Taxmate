@@ -7,7 +7,7 @@ import Main from "../component/main";
 import './abouttax.css'; // Adjust the path if necessary
 import Modal from "react-bootstrap/Modal"; // ถ้าใช้ Bootstrap
 
-const Abouttax = () => {
+const Lawtax = () => {
     // อาร์เรย์ของภาพที่ต้องการแสดง
     const images = [
         { src: '/asset/Taxpayers.jpg', alt: 'First slide' },
@@ -288,4 +288,4 @@ const Abouttax = () => {
 }
 
 
-export default Abouttax;
+export default Lawtax;
