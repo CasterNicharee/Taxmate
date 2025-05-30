@@ -38,11 +38,7 @@ function Footer() {
                                 กฎหมาย
                             </a>
                         </li>
-                        <li className="nav-item">
-                            <a href="/QA" className="nav-link px-2 kanit-light footertextcolor">
-                                Q&A
-                            </a>
-                        </li>
+
                         <li className="nav-item">
                             <a href="/contact" className="nav-link px-2 kanit-light footertextcolor">
                                 ติดต่อเรา

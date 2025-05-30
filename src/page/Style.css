@@ -240,3 +240,213 @@
 
 
 
+/*หน้าแรก*/
+.headstep-format {
+    text-align: center;
+    align-items: center;
+    align-content: center;
+}
+
+.homepage-head-text {
+    color: #004F70;
+    font-size: 32px;
+}
+
+.homepage-paragraph-head-text {
+    color: rgb(71, 71, 71);
+    font-size: 18px;
+}
+
+.line {
+
+    width: 60%;
+    /* Set the width to 50% of the parent container */
+    height: 1px;
+    /* Set the height of the line */
+    background-color: rgb(214, 214, 214);
+    /* Set the color of the line */
+    margin: auto;
+    /* Optional: Add some margin for spacing */
+}
+
+/* General Section Styling */
+#about {
+    padding: 50px 0;
+}
+
+
+/* Heading Styling */
+.section-heading {
+    margin-bottom: 30px;
+}
+
+.section-heading h3 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #1f356d;
+    margin-bottom: 10px;
+}
+
+.section-heading .section-title {
+    font-size: 36px;
+    font-weight: 700;
+    color: #1f356d;
+    margin-bottom: 20px;
+}
+
+.section-heading .section-subtitle {
+    font-size: 16px;
+    color: #474747;
+    line-height: 1.5;
+}
+
+/* Row and Columns Styling */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.col-3 {
+    flex: 0 0 25%;
+    padding: 15px;
+}
+
+.col-2-3 {
+    flex: 0 0 70%;
+    padding: 15px;
+}
+
+/* Nested Row inside col-2-3 */
+.row>.col-2 {
+    flex: 0 0 48%;
+    /* คอลัมน์ย่อย 48% ของความกว้าง */
+    padding: 15px;
+}
+
+/* Icon Block Styling */
+.icon-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    margin-bottom: 30px;
+    background-color: #fff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.icon-block:hover {
+    transform: translateY(-10px);
+}
+
+.icon {
+    margin-bottom: 15px;
+}
+
+.icon i {
+    font-size: 40px;
+    color: #ffffff;
+}
+
+.icon-block-description h4 {
+    font-size: 20px;
+
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.icon-block-description p {
+    font-size: 14px;
+    color: #4e4e4e;
+    line-height: 1.5;
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+    .col-3 {
+        flex: 0 0 100%;
+        margin-bottom: 30px;
+    }
+
+    .col-2-3 {
+        flex: 0 0 100%;
+    }
+
+    .row>.col-2 {
+        flex: 0 0 100%;
+        /* ปรับให้คอลัมน์ย่อยใช้ความกว้างเต็มที่ */
+        margin-bottom: 30px;
+    }
+
+    .icon-block {
+        width: 100%;
+    }
+}
+
+.abouttaxbg {
+    width: 100%;
+    /* กว้างเต็มหน้าจอ */
+    height: 300px;
+    overflow: hidden;
+    /* ซ่อนส่วนที่เกินออกมา */
+    position: relative;
+    /* กำหนดให้เป็นจุดอ้างอิงของ pseudo-element */
+
+    background-color: #f5f5f5;
+    /* สีพื้นหลัง */
+    background-size: cover;
+    /* ปรับขนาดภาพให้เต็มพื้นที่ */
+    background-position: center center;
+    /* จัดตำแหน่งภาพให้ตรงกลาง */
+    background-repeat: no-repeat;
+    /* ไม่ให้ภาพซ้ำ */
+    background-attachment: fixed;
+    /* ทำให้ภาพไม่เลื่อนตามเมื่อเลื่อนหน้าเว็บ */
+
+    opacity: 0.95;
+    /* ต้องใช้ค่าทศนิยมและไม่มี `%` */
+}
+
+
+/* ใช้ pseudo-element เพื่อสร้างเลเยอร์ที่มีภาพพื้นหลัง */
+.abouttaxbg::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url(../../public/asset/assetbackground.jpg);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    /* ทำให้ภาพไม่เลื่อนตามเมื่อเลื่อนหน้าเว็บ */
+    opacity: 5%;
+    /* ปรับความโปร่งใสของภาพ */
+    z-index: -1;
+    /* ทำให้ภาพอยู่ข้างหลังเนื้อหาของ footer */
+}
+
+.home-text-head {
+    font-size: 20px;
+    color: #004F70;
+}
+
+.home-text-paragraph {
+    font-size: 18px;
+    color: #7c7b7b;
+}
+
+a {
+    text-decoration: none;
+}
+
+a img {
+    height: 100px;
+    /* กำหนดความสูงให้เท่ากัน */
+    width: auto;
+    /* ให้ความกว้างปรับตามอัตราส่วนของภาพ */
+}

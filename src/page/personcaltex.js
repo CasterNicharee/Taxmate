@@ -415,6 +415,7 @@ const Personcaltex = () => {
     };
     return (
         <Main>
+            <img className="slider" src="/asset/slider-1.png" alt="" /><br /><br />
             <div className="container">
                 <div className="page-format">
                     <div className="header-top text-white kanit-regular" style={{ position: 'relative' }}>
@@ -725,7 +726,7 @@ const Personcaltex = () => {
                     </div>
                     <form className="incomepage">
                         <div >
-                            <div className="row" style={{ paddingTop: '10px', display: "flex", alignItems: "center" }}>
+                            <div className="row" style={{ paddingTop: '10px', display: "flex", alignItems: "center" }} >
                                 <div className="col-4">
                                     <label className="kanit-regular text-form-leble-content ">สถานภาพสมรส</label>
 

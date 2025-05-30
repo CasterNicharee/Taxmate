@@ -69,6 +69,22 @@ const Abouttax = () => {
                     </ol>
                 </p>
                 <br />
+                <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '60vh' }}>
+                    <div className="quote-container">
+                        <p className="quote-text kanit-regular ">
+                            จ่ายภาษีด้วยความรับผิดชอบ ดีกว่าต้องจ่ายค่าปรับด้วยความเสียดาย
+                        </p>
+                        <div className="author">
+                            <img src="asset/avatar.jpg" alt="User" className="author-img" />
+                            <div className="author-info">
+                                <p className="author-name">TAXMATE เพื่อนคู่คิดเรื่องภาษี</p>
+                                <p className="author-role">Taxmate Admin</p>
+                            </div>
+                        </div>
+                        <span className=" quote-symbol">”</span>
+                    </div>
+
+                </div><br />
                 <div>
                     <h4 className="kanit-semibold about-upper-head-text-content">หลักการจัดเก็บภาษีเงินได้บุคคลธรรมดา</h4>
                     <p className="about-text-content kanit-light"> การจัดเก็บภาษีเงินได้บุคคลธรรมดามีหลักการจัดเก็บ แบ่งเป็น 2 หลักการ ได้แก่ </p>
@@ -238,22 +254,7 @@ const Abouttax = () => {
 
 
 
-                <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '60vh' }}>
-                    <div className="quote-container">
-                        <p className="quote-text kanit-regular ">
-                            จ่ายภาษีด้วยความรับผิดชอบ ดีกว่าต้องจ่ายค่าปรับด้วยความเสียดาย
-                        </p>
-                        <div className="author">
-                            <img src="/logo192.png" alt="User" className="author-img" />
-                            <div className="author-info">
-                                <p className="author-name">TAXMATE เพื่อนคู่คิดเรื่องภาษี</p>
-                                <p className="author-role">Taxmate Admin</p>
-                            </div>
-                        </div>
-                        <span className=" quote-symbol">”</span>
-                    </div>
 
-                </div>
             </div>
 
             <div className="container aboutpageformat">

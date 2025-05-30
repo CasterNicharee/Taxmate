@@ -14,6 +14,22 @@
 
 }
 
+.lawtax-upper-head-text-content {
+    font-size: 20px;
+    color: #004F70;
+
+}
+
+.codelaw {
+    font-size: 17px;
+}
+
+.lawtax-lower-head-text-content {
+    font-size: 18px;
+    color: #046792;
+
+}
+
 .about-lower-head-text-content {
     font-size: 20px;
     color: #046792;
@@ -81,50 +97,6 @@
     /* เพิ่มช่องว่างรอบๆ */
 }
 
-.abouttaxbg {
-    width: 100%;
-    /* กว้างเต็มหน้าจอ */
-    height: 400px;
-    overflow: hidden;
-    /* ซ่อนส่วนที่เกินออกมา */
-    position: relative;
-    /* กำหนดให้เป็นจุดอ้างอิงของ pseudo-element */
-
-    background-color: #dbdcdc;
-    /* สีพื้นหลัง */
-    background-size: cover;
-    /* ปรับขนาดภาพให้เต็มพื้นที่ */
-    background-position: center center;
-    /* จัดตำแหน่งภาพให้ตรงกลาง */
-    background-repeat: no-repeat;
-    /* ไม่ให้ภาพซ้ำ */
-    background-attachment: fixed;
-    /* ทำให้ภาพไม่เลื่อนตามเมื่อเลื่อนหน้าเว็บ */
-
-    opacity: 0.95;
-    /* ต้องใช้ค่าทศนิยมและไม่มี `%` */
-}
-
-
-/* ใช้ pseudo-element เพื่อสร้างเลเยอร์ที่มีภาพพื้นหลัง */
-.abouttaxbg::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-image: url(../../public/asset/slider-2.png);
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    /* ทำให้ภาพไม่เลื่อนตามเมื่อเลื่อนหน้าเว็บ */
-    opacity: 5%;
-    /* ปรับความโปร่งใสของภาพ */
-    z-index: -1;
-    /* ทำให้ภาพอยู่ข้างหลังเนื้อหาของ footer */
-}
 
 .span-about-text-detail {
     padding-left: 20px;
@@ -212,7 +184,7 @@
     font-weight: bold;
     color: rgba(0, 0, 0, 0.1);
     position: absolute;
-    bottom:160px;
+    bottom: 160px;
     right: 100px;
     font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
 }
